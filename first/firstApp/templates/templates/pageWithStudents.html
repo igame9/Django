@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <style type="text/css">
+   TABLE {
+    width: 300px;
+    border: 1px solid black;
+    background: White;
+    border-collapse: collapse;
+   }
+    TD, TH {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+   }
+   TH {
+    background: AntiqueWhite;
+    color: Whitew;
+   }
+  </style>
+<body>
+
+    <table border = "0" cellpadding="3" >
+<caption> Таблица студентов </caption>
+    <tr>
+        <th width=60  align=left>  Имя  </th>
+        <th width=110 align=left>  Фамилия </th>
+        <th width=200 align=left>  Средний балл  </th>
+    </tr>
+        {% for person in student %}
+    <tr>
+        <td>{{ person.nameStudent }}</td>
+        <td>{{ person.familyStudent }}</td>
+        <td>{{ person.averageScore }}</td>
+    </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
