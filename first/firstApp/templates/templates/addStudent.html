@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+{% endblock %}
+
+    {% block body %}
+    {% for message in messages %}
+        <div class="message {{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+        <form action="/addStudents/newStudent/" method="post">
+            {% csrf_token %}
+            <fieldset>
+            <legend>Добавить студента</legend>
+                <div>
+                  <label for="inputName">Имя</label>
+                  <div class="col-md-4">
+                  <input id="inputName" name="inputName" type="text">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="familyInput">Фамилия</label>
+                  <div class="col-md-4">
+                  <input id="familyInput" name="familyInput" type="text">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="averageMark">Средний балл</label>
+                  <div class="col-md-4">
+                  <input id="averageMark" name="averageMark" type="text">
+                      <input type="submit" name="submit" value="OK">
+                  </div>
+                </div>
+
+            </fieldset>
+        </form>
+    {% endblock %}
+</html>
